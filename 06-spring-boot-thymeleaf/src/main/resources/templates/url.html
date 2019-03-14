@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a th:href="@{http://www.baidu.com}">绝对路径</a><br/>
+    <a href="http://www.baidu.com">绝对路径2</a>
+    <hr/>
+    <a th:href="@{/page}">相对路径</a>
+    <hr/>
+    <!-- 服务器指的是Tomcat等。比如Tomcat下的webapps下的项目 -->
+    <a th:href="@{~/project2/resourcename}">相对于服务器的根</a>
+    <hr/>
+    <a th:href="@{/page(id=1,name=zhagnsan)}">相对路径-传参</a>
+    <hr/>
+    <a th:href="@{/path/{id}/show(id=1,name=zhagnsan)}">相对路径-传参-restful</a>
+</body>
+</html>

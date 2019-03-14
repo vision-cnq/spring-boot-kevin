@@ -1,0 +1,5 @@
+spring:
+  redis:
+    host: 188.2.11.151
+    port: 6379
+    password: p@ssw0rd

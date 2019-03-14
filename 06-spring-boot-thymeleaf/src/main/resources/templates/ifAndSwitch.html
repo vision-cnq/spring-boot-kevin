@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<body>
+<span th:if="${sex} == '男'">
+		性别：男
+	</span>
+<span th:if="${sex} == '女'">
+		性别：女
+	</span>
+<hr/>
+<div th:switch="${id}">
+    <span th:case="1">ID为1</span>
+    <span th:case="2">ID为2</span>
+    <span th:case="3">ID为3</span>
+</div>
+</body>
+</html>

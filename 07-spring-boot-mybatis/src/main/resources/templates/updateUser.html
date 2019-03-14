@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/users/editUser}" method="post">
+			<input type="hidden" name="id" th:field="${user.id}"/>
+			用户姓名：<input type="text" name="name" th:field="${user.name}"/><br/>
+			用户年龄：<input type="text" name="age" th:field="${user.age}"/><br/>
+			<input type="submit" value="确定"/><br/>
+	</form>
+</body>
+</html>

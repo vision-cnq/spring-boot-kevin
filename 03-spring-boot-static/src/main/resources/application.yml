@@ -1,0 +1,9 @@
+spring:
+  mvc:
+    static-path-pattern: /static/**
+  thymeleaf:
+    prefix: classpath:/templates/
+    cache: false
+server:
+  tomcat:
+    uri-encoding: UTF-8

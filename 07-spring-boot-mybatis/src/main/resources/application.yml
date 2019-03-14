@@ -1,0 +1,22 @@
+spring:
+  #数据源配置
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ssm_crud
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+  #springboot的静态资源调用
+  thymeleaf:
+    prefix: classpath:/templates/
+    cache: false
+mybatis:
+  #定义别名
+  type-aliases-package: com.kevin.entity
+  #指定sql映射文件位置
+  mapper-locations: classpath:mybatis/mapper/*.xml
+logging:
+  level:
+    com:
+      kevin:
+        mapper: debug

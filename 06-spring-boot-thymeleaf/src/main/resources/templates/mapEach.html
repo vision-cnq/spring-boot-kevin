@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    <tr th:each="maps : ${map}">
+        <td th:text="${maps}"></td>
+    </tr>
+</table>
+<th/>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    <tr th:each="maps : ${map}">
+        <td th:each="entry:${maps}" th:text="${entry.value.userid}" ></td>
+        <td th:each="entry:${maps}" th:text="${entry.value.username}"></td>
+        <td th:each="entry:${maps}" th:text="${entry.value.userage}"></td>
+    </tr>
+</table>
+</body>
+</html>

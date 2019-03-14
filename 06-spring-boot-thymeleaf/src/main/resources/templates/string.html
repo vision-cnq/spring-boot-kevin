@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf中的字符串案例</title>
+</head>
+<body>
+    <span th:text="hello"></span>
+    <hr/>
+    <span th:text="${msg}"></span>
+    <hr/>
+    <input type="text" name="username" th:value="${msg}" />
+    <hr/>
+    <span th:text="${#strings.isEmpty(msg)}"></span>
+    <span th:text="${#strings.contains(msg,'9')}"></span>
+    <span th:text="${#strings.contains(msg,'T')}"></span>
+    <hr/>
+    <span th:text="${#strings.startsWith(msg,'a')}"></span>
+    <span th:text="${#strings.startsWith(msg,'T')}"></span>
+    <hr/>
+    <span th:text="${#strings.endsWith(msg,'a')}"></span>
+    <span th:text="${#strings.endsWith(msg,'案例')}"></span>
+    <hr/>
+    <span th:text="${#strings.length(msg)}"></span>
+    <hr/>
+    <span th:text="${#strings.indexOf(msg,'h')}"></span>
+    <hr/>
+    <span th:text="${#strings.substring(msg,13)}"></span>
+    <span th:text="${#strings.substring(msg,13,14)}"></span>
+    <hr/>
+    <span th:text="${#strings.toUpperCase(msg)}"></span>
+    <span th:text="${#strings.toLowerCase(msg)}"></span>
+    <hr/>
+    <span th:text="${#dates.format(key)}"></span>
+    <hr/>
+    <span th:text="${#dates.format(key,'yyy/MM/dd')}"></span>
+    <hr/>
+    <span th:text="${#dates.year(key)}"></span>-
+    <hr/>
+    <span th:text="${#dates.month(key)}"></span>-
+    <hr/>
+    <span th:text="${#dates.day(key)}"></span>
+
+</body>
+</html>

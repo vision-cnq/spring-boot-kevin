@@ -31,6 +31,7 @@
         <module>12-spring-boot-exception</module>
         <module>13-spring-boot-devtools</module>
         <module>14-spring-boot-validate</module>
+        <module>15-spring-boot-junit</module>
     </modules>
 
 </project>

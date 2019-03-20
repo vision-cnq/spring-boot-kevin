@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @author kevin
  * @version 1.0
- * @description     springboot启动类
+ * @description     springboot整合mybatis（注解和xml配置形式分别使用）
  * @createDate 2019/3/13
  */
 @SpringBootApplication

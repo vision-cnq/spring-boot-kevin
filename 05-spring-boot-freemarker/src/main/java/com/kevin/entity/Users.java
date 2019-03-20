@@ -1,9 +1,27 @@
 package com.kevin.entity;
 
+/**
+ * @author kevin
+ * @version 1.0
+ * @description
+ * @createDate 2019/3/13
+ */
 public class Users {
+
 	private Integer userid;
 	private String username;
 	private Integer userage;
+
+	public Users() {
+	}
+
+	public Users(Integer userid, String username, Integer userage) {
+		super();
+		this.userid = userid;
+		this.username = username;
+		this.userage = userage;
+	}
+
 	public Integer getUserid() {
 		return userid;
 	}
@@ -21,16 +39,6 @@ public class Users {
 	}
 	public void setUserage(Integer userage) {
 		this.userage = userage;
-	}
-	public Users(Integer userid, String username, Integer userage) {
-		super();
-		this.userid = userid;
-		this.username = username;
-		this.userage = userage;
-	}
-	public Users() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 }

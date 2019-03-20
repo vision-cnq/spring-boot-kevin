@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * @author kevin
  * @version 1.0
- * @description     数据持久层
+ * @description     使用xml形式获取数据，数据持久层
  * @createDate 2019/3/13
  */
 public interface UsersMapper {

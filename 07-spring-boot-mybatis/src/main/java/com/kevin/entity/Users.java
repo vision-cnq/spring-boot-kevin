@@ -3,7 +3,7 @@ package com.kevin.entity;
 /**
  * @author kevin
  * @version 1.0
- * @description
+ * @description     用户实体类
  * @createDate 2019/3/13
  */
 public class Users {

@@ -2,7 +2,7 @@ spring:
   #数据源配置
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/ssm_crud
+    url: jdbc:mysql://localhost:3306/ssm_crud?characterEncoding=utf-8
     username: root
     password: 123456
     type: com.alibaba.druid.pool.DruidDataSource
@@ -15,6 +15,7 @@ mybatis:
   type-aliases-package: com.kevin.entity
   #指定sql映射文件位置
   mapper-locations: classpath:mybatis/mapper/*.xml
+#打印执行的sql语句
 logging:
   level:
     com:

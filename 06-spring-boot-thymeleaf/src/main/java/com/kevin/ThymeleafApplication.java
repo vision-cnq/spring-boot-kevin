@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @author kevin
  * @version 1.0
- * @description
+ * @description     springboot整合Thymeleaf
  * @createDate 2019/3/14
  */
 @SpringBootApplication

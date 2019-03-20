@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * @author kevin
  * @version 1.0
- * @description     视图控制层
+ * @description     用xml配置文件获取数据，视图控制层
  * @createDate 2019/3/13
  */
 @Controller
@@ -24,7 +24,7 @@ public class UsersController {
     private UsersService usersService;
 
     /**
-     * 页面跳转
+     * 页面跳转     访问地址：http://localhost:8080/users/input
      * @param page
      * @return
      */
@@ -34,7 +34,7 @@ public class UsersController {
     }
 
     /**
-     *  用户添加    访问地址： http://localhost:8080/users/addUser
+     *  用户添加    访问地址：http://localhost:8080/users/input，添加name，age提交到该方法
      * @param users
      */
     @RequestMapping("/addUser")

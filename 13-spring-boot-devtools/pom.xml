@@ -11,5 +11,42 @@
 
     <artifactId>13-spring-boot-devtools</artifactId>
 
+    <dependencies>
+        <!-- springBoot的启动器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- thymeleaf的启动器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <!-- DevTools热部署依赖包-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <!-- optional作用：当其它项目使用该项目是，依赖包加入optional为true，则不会向下传递该依赖包 -->
+            <!--<optional>true</optional>-->
+        </dependency>
+    </dependencies>
+
+    <!-- springloader插件，以maven插件的形式进行热部署-->
+    <!-- 想要让这个热部署插件生效，需要使用maven的命令启动命令为：mvn spring-boot:run -->
+    <!--<build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>springloaded</artifactId>
+                        <version>1.2.8.RELEASE</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>-->
 
 </project>

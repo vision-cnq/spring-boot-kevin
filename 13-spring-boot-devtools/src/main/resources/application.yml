@@ -1,0 +1,12 @@
+spring:
+  devtools:
+    restart:
+      #热部署设置为true：生效，false：失效。默认是true
+      enabled: true
+      #选择热部署需要重启的目录
+      additional-paths: src/main/java
+      #选择热部署中修改文件内容不修改重启的目录或文件
+      #exclude: templates/**
+  thymeleaf:
+    #页面模板是否缓存，false：不缓存，则热部署对页面生效。true：缓存，则热部署对页面不生效
+    cache: false

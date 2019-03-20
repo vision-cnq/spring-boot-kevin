@@ -4,6 +4,7 @@ import com.kevin.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,11 +18,16 @@ import java.util.List;
 @Controller
 public class UserController {
 
+    @RequestMapping(value = "/index",method = RequestMethod.GET)
+    public String index(){
+        return "index";
+    }
+
     /**
      * 处理请求，产生数据
      * @return
      */
-    @RequestMapping("/showUser")
+    @RequestMapping(value = "/showUser",method = RequestMethod.POST)
     public String showUser(Model model) {
         List<User> list = new ArrayList<>();
         list.add(new User(1,"张三",20));

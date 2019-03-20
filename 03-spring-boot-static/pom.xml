@@ -12,7 +12,8 @@
     <artifactId>03-spring-boot-static</artifactId>
 
     <dependencies>
-        <!-- 集成sparing mvc-->
+
+        <!-- web启动器-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -22,10 +23,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-        </dependency>
+
     </dependencies>
 
 </project>

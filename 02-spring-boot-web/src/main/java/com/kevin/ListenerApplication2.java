@@ -1,5 +1,11 @@
 package com.kevin;
 
+import com.kevin.web.listener.SecondListener;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
+import org.springframework.context.annotation.Bean;
+
 /**
  * @author kevin
  * @version 1.0
@@ -7,7 +13,7 @@ package com.kevin;
  * 通过方法完成Listener组件的注册
  * @createDate 2019/3/13
  */
-/*@SpringBootApplication
+@SpringBootApplication
 public class ListenerApplication2 {
 
     public static void main(String[] args) {
@@ -21,4 +27,4 @@ public class ListenerApplication2 {
                 new ServletListenerRegistrationBean<SecondListener>(new SecondListener());
         return bean;
     }
-}*/
+}

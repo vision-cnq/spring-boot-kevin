@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @description     SpringBoot启动类
  * @createDate 2019/3/13
  */
+/*
 @SpringBootApplication
 public class Application {
 
@@ -16,3 +17,4 @@ public class Application {
         SpringApplication.run(Application.class,args);
     }
 }
+*/

@@ -1,5 +1,13 @@
 package com.kevin;
 
+import com.kevin.web.filter.SecondFilter;
+import com.kevin.web.servlet.SecondServlet;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.context.annotation.Bean;
+
 /**
  * @author kevin
  * @version 1.0
@@ -7,7 +15,7 @@ package com.kevin;
  * 通过方法完成Filer组件的注册
  * @createDate 2019/3/13
  */
-/*@SpringBootApplication
+@SpringBootApplication
 public class FilterApplication2 {
 
     public static void main(String[] args) {
@@ -30,4 +38,4 @@ public class FilterApplication2 {
         bean.addUrlPatterns("/second");
         return bean;
     }
-}*/
+}

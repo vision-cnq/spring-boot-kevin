@@ -14,7 +14,7 @@ import java.util.Map;
  * @createDate 2019/3/12
  */
 @Controller
-public class HelloWord {
+public class HelloWorld {
 
     // 访问地址： http://localhost:8080/hello
     @RequestMapping("/hello")

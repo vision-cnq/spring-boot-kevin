@@ -11,11 +11,11 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  * 通过注解扫描完成Filer组件的注册
  * @createDate 2019/3/13
  */
-/*@SpringBootApplication
+@SpringBootApplication
 @ServletComponentScan
 public class FilterApplication1 {
 
     public static void main(String[] args) {
         SpringApplication.run(FilterApplication1.class,args);
     }
-}*/
+}

@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>13-spring-boot-devtools</artifactId>
+    <artifactId>12-spring-boot-devtools</artifactId>
 
     <dependencies>
         <!-- springBoot的启动器 -->

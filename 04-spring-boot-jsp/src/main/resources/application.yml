@@ -1,0 +1,10 @@
+spring:
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /WEB-INF/jsp/
+  thymeleaf:
+    cache: false
+    enable-spring-el-compiler: false
+server:
+  port: 8080

@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>11-spring-boot-redis</artifactId>
+    <artifactId>10-spring-boot-redis</artifactId>
     <dependencies>
         <!-- springBoot的启动器 -->
         <dependency>

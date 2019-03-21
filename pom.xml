@@ -25,13 +25,13 @@
         <module>06-spring-boot-thymeleaf</module>
         <module>07-spring-boot-mybatis</module>
         <module>08-spring-boot-jpa</module>
-        <module>09-spring-boot-hibernate</module>
-        <module>10-spring-boot-hibernate-jpa</module>
-        <module>11-spring-boot-redis</module>
-        <module>12-spring-boot-exception</module>
-        <module>13-spring-boot-devtools</module>
-        <module>14-spring-boot-validate</module>
-        <module>15-spring-boot-junit</module>
+        <module>09-spring-boot-ehcache</module>
+        <module>10-spring-boot-redis</module>
+        <module>11-spring-boot-exception</module>
+        <module>12-spring-boot-devtools</module>
+        <module>13-spring-boot-validate</module>
+        <module>14-spring-boot-junit</module>
+        <module>15-spring-boot-quartz</module>
     </modules>
 
 </project>

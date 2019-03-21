@@ -1,8 +1,7 @@
 package com.kevin.test;
 
 import com.kevin.JpaApplication;
-import com.kevin.dao.UsersCrudRepository;
-import com.kevin.dao.UsersRepository;
+import com.kevin.dao.UsersJpaRepository;
 import com.kevin.dao.UsersRepositoryByName;
 import com.kevin.dao.UsersRepositoryQueryAnnotation;
 import com.kevin.entity.Users;
@@ -19,7 +18,7 @@ import java.util.List;
 /**
  * @author kevin
  * @version 1.0
- * @description     测试Repository功能
+ * @description     测试Repository功能，方法名称命名与@Quert功能
  * @createDate 2019/3/20
  */
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -27,24 +26,10 @@ import java.util.List;
 public class UsersRepositoryTest {
 
     @Autowired
-    private UsersRepository usersRepository;
-
-    @Autowired
     private UsersRepositoryByName usersRepositoryByName;
 
     @Autowired
     private UsersRepositoryQueryAnnotation usersRepositoryQueryAnnotation;
-
-
-    // 最基本的新增功能
-    @Test
-    public void testSave(){
-        Users users = new Users();
-        users.setAddress("广州");
-        users.setAge(22);
-        users.setName("cnq");
-        this.usersRepository.save(users);
-    }
 
     // Repository---方法名称命名测试,根据名字作为条件查询
     @Test

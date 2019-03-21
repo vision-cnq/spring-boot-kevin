@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * @author kevin
  * @version 1.0
- * @description        测试CrudRepository功能
+ * @description        测试CrudRepository,增删改查功能
  * @createDate 2019/3/20
  */
 @RunWith(SpringJUnit4ClassRunner.class)

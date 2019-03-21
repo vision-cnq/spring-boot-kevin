@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * @author kevin
  * @version 1.0
- * @description     实体类
+ * @description     用户实体类
  * @createDate 2019/3/20
  */
 @Entity     // 表示该类为实体类
@@ -22,6 +22,10 @@ public class Users {
     private Integer age;
     @Column(name = "address")   // 列名
     private String address;
+
+    @ManyToOne(cascade = CascadeType.PERSIST)      // ManyToOne表示多对一，cascade = CascadeType.PERSIST属性是级联操作
+    @JoinColumn(name = "roles_id")   // 维护外键
+    private Roles roles;        // 对应的角色
 
     public Users() {
     }
@@ -72,5 +76,13 @@ public class Users {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Roles getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Roles roles) {
+        this.roles = roles;
     }
 }

@@ -16,9 +16,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  *          提供方法名称命名查询方式
  *          提供基于@Query注解查询与更新
  *      2.CrudRepository接口
+ *          继承Repository接口，实现CRUD相关操作
  *      3.PagingAndSortingRepository接口
+ *          继承CrudRepository接口，实现分页排序相关操作
  *      4.JpaRepository接口
+ *          继承PagingAndSortingRepository接口，实现JPA规范相关操作
  *      5.JPASpecificationExecutor接口
+ *          不属于Repository体系，单独存在，提供多条件的支持，并且可以在查询中添加分页和排序
  *
  * @createDate 2019/3/20
  */

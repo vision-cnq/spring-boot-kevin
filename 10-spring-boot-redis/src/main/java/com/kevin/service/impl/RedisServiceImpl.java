@@ -1,13 +1,16 @@
 package com.kevin.service.impl;
 
+import com.kevin.entity.Users;
 import com.kevin.service.RedisService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
+import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -545,5 +548,41 @@ public class RedisServiceImpl implements RedisService {
             e.printStackTrace();
             return 0;
         }
+    }
+
+    //===============================实体类=================================
+
+    /**
+     * 基于JSON格式插入对象数据到redis
+     * @param key   键
+     * @param value 值
+     * @param zClass    对象类型
+     */
+    public void setModel(String key,Object value, Class<?> zClass){
+        redisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<>(zClass));
+        redisTemplate.opsForValue().set(key,value);
+    }
+
+    /**
+     * 基于JSON格式插入对象数据到redis
+     * @param key   键
+     * @param value 值
+     * @param zClass    对象类型
+     * @param time  过期时间/单位秒
+     */
+    public void setModel(String key,Object value, Class<?> zClass,long time){
+        redisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<>(zClass));
+        redisTemplate.opsForValue().set(key, value, time, TimeUnit.SECONDS);
+    }
+
+    /**s
+     * 基于JSON格式取对象数据
+     * @param key       键
+     * @param zClass    类型
+     * @return
+     */
+    public Users getModel(String key, Class<?> zClass){
+        this.redisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<>(zClass));
+        return (Users)this.redisTemplate.opsForValue().get(key);
     }
 }

@@ -1,5 +1,7 @@
 package com.kevin.service;
 
+import com.kevin.entity.Users;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -294,4 +296,32 @@ public interface RedisService {
      * @return 移除的个数
      */
     public long lRemove(String key, long count, Object value);
+
+    //===============================实体类=================================
+
+    /**
+     * 基于JSON格式插入对象数据到redis
+     * @param key       键
+     * @param value     值
+     * @param zClass    对象类型
+     */
+    public void setModel(String key,Object value, Class<?> zClass);
+
+    /**
+     * 基于JSON格式插入对象数据到redis
+     * @param key       键
+     * @param value     值
+     * @param zClass    对象类型
+     * @param time      过期时间
+     */
+    public void setModel(String key,Object value, Class<?> zClass, long time);
+
+    /**
+     * 基于JSON格式取对象数据
+     * @param key
+     * @param zClass
+     * @return
+     */
+    public Users getModel(String key, Class<?> zClass);
+
 }

@@ -1,29 +1,45 @@
-package com.kevin.utils;
+package com.kevin.service.impl;
 
+import com.kevin.service.RedisService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author kevin
+ *
+ * @title
+ * @description
+ * @author caonanqing
+ * @createDate 2019/3/14
  * @version 1.0
- * @description     ReidsTemplate配置
- * @createDate 2019/3/13
  */
-public class RedisUtil {
+@Service
+public class RedisServiceImpl implements RedisService {
 
+    private static Logger LOGGER = LoggerFactory.getLogger(RedisServiceImpl.class);
+
+    @Resource
     private RedisTemplate<String,Object> redisTemplate;
 
-    public void setRedisTemplate(RedisTemplate<String, Object> redisTemplate) {
-        this.redisTemplate = redisTemplate;
+    //=============================common============================
+
+    /**
+     * 根据通配符获取匹配的所有Key
+     * @param pattern   通配符
+     * @return
+     */
+    public Set<String> keys(String pattern){
+        return redisTemplate.keys(pattern);
     }
 
-
-    //=============================common============================
     /**
      * 指定缓存失效时间
      * @param key 键
@@ -390,7 +406,7 @@ public class RedisUtil {
      * @param end 结束  0 到 -1代表所有值
      * @return
      */
-    public List<Object> lGet(String key,long start, long end){
+    public List<Object> lGet(String key, long start, long end){
         try {
             return redisTemplate.opsForList().range(key, start, end);
         } catch (Exception e) {
@@ -458,6 +474,7 @@ public class RedisUtil {
             return true;
         } catch (Exception e) {
             e.printStackTrace();
+            LOGGER.error("插入数据到Redis时异常: "+e);
             return false;
         }
     }
@@ -529,5 +546,4 @@ public class RedisUtil {
             return 0;
         }
     }
-
 }

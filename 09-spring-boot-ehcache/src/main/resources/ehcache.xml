@@ -1,0 +1,37 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../config/ehcache.xsd">
+
+    <diskStore path="java.io.tmpdir"/>
+
+    <!-- defaultCache：ehcache的默认缓存策略 -->
+    <!--maxElementsInMemory：最大的缓存对象数量
+        eternal：是否持久化
+        timeToIdleSeconds：对象空闲时间，超过该时间没被访问则删除
+        timeToLiveSeconds：对象存活时间。
+        maxElementsOnDisk：磁盘上缓存的元素的最大数量
+        diskExpiryThreadIntervalSeconds：对象检测线程运行时间间隔。
+        memoryStoreEvictionPolicy：内存中数据超过内存限制，则向磁盘缓存。默认：LRU（最近最少使用），FIFO（先进先出），LFU（最少使用）
+     -->
+    <defaultCache
+            maxElementsInMemory="10000"
+            eternal="false"
+            timeToIdleSeconds="120"
+            timeToLiveSeconds="120"
+            maxElementsOnDisk="10000000"
+            diskExpiryThreadIntervalSeconds="120"
+            memoryStoreEvictionPolicy="LRU">
+        <persistence strategy="localTempSwap"/>
+    </defaultCache>
+
+    <!-- 自定义缓存策略 -->
+    <cache name="users"
+            maxElementsInMemory="10000"
+            eternal="false"
+            timeToIdleSeconds="120"
+            timeToLiveSeconds="120"
+            maxElementsOnDisk="10000000"
+            diskExpiryThreadIntervalSeconds="120"
+            memoryStoreEvictionPolicy="LRU">
+        <persistence strategy="localTempSwap"/>
+    </cache>
+
+</ehcache>

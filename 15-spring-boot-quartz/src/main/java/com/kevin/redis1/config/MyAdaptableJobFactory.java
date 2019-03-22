@@ -1,4 +1,4 @@
-package com.kevin.config;
+package com.kevin.redis1.config;
 
 import org.quartz.spi.TriggerFiredBundle;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,0 +1,19 @@
+spring:
+  #配置数据源
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ssm_crud?characterEncoding=utf-8
+    username: root
+    password: 123456
+    #使用druid连接池
+    type: com.alibaba.druid.pool.DruidDataSource
+  jpa:
+    hibernate:
+      #正向工程，如果数据中没有表，则会创建一张表再更新数据，存在，则会直接更新数据
+      ddl-auto: update
+    #打印执行sql语句
+    show-sql: true
+  #配置ehcache缓存的配置文件
+  cache:
+    ehcache:
+      config: classpath:ehcache.xml

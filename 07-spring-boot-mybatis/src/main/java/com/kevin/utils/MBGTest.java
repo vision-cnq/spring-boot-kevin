@@ -1,4 +1,4 @@
-package com.kevin.redis1.utils;
+package com.kevin.utils;
 
 import java.io.File;
 import java.util.ArrayList;

@@ -21,7 +21,7 @@ import java.time.Duration;
 /**
  *
  * @title
- * @description
+ * @description     重写RedisTemplate源码，原始是RedisTemplate<Object, Object>转为RedisTemplate<String, Object>
  * @author caonanqing
  * @createDate 2019/3/14
  * @version 1.0

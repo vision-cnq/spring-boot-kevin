@@ -13,7 +13,7 @@ import java.util.Set;
 /**
  * @author kevin
  * @version 1.0
- * @description     在控制台测试Redis
+ * @description     在Controller层获取Redis中的数据
  * @createDate 2019/3/22
  */
 @RestController

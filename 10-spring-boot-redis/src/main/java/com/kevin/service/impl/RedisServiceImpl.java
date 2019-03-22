@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 /**
  *
  * @title
- * @description
+ * @description     封装实现Redis的方法
  * @author caonanqing
  * @createDate 2019/3/14
  * @version 1.0

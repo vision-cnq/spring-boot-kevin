@@ -11,5 +11,18 @@
 
     <artifactId>11-spring-boot-exception</artifactId>
 
+    <dependencies>
+        <!-- springBoot的启动器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- thymeleaf的启动器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+    </dependencies>
 
 </project>

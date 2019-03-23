@@ -1,4 +1,4 @@
-package com.kevin.redis1.config;
+package com.kevin.config;
 
 import com.kevin.quartz.QuartzDemo;
 import org.springframework.context.annotation.Bean;

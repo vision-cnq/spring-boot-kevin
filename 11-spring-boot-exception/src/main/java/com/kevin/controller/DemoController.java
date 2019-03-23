@@ -1,9 +1,7 @@
 package com.kevin.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @author kevin
@@ -26,5 +24,12 @@ public class DemoController {
         int a = 10/0;
         return "index";
     }
+
+    @RequestMapping("/show3")
+    public String showInfo3(){
+        return "index";
+    }
+
+
 
 }

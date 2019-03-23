@@ -20,9 +20,9 @@ public class ScheduledDemo {
      *     cron属性：cron表达式，定时任务触发是时间的一个字符串表达形式
      *
      */
-    @Scheduled(cron = "2 * * * * ?")
+    @Scheduled(cron = "0/2 * * * * ?")
     public void scheduledMethod(){
-        // 设置为两秒启动一次
+        // 设置每两秒启动一次
         System.out.println("定时器被触发"+new Date());
     }
 }

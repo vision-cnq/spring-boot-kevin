@@ -31,7 +31,6 @@ public class Users implements Serializable {
         this.age = age;
     }@Override
     public String toString() {
-        return "Users [id=" + id + ", name=" + name + ", age=" + age +
-                "]";
+        return "Users [id=" + id + ", name=" + name + ", age=" + age + "]";
     }
 }

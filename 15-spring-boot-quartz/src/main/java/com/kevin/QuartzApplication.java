@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * @author kevin
  * @version 1.0
  * @description     SptingBoot整合Quart定时任务框架
- *      方式一：编写配置类
+ *      编写配置类
  *
  *      Quartz可以与javaee与javase应用程序结合使用，也可以单独使用。
  *      Quartz可以用来创建简单或为运行十个，百个，甚至是好几万个Jobs这样复杂的程序。Jobs可以做成标准的Java组件或EJBs。

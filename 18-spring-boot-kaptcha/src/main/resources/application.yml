@@ -1,0 +1,19 @@
+kevin:
+  kaptcha:
+    border: "no"
+      #color: red
+    image:
+      width: 120
+      height: 80
+    textproducer:
+      char:
+        length: 4
+        space: 4
+      font:
+        color: red
+        size: 30
+        names: 宋体,楷体,微软雅黑
+    session:
+      key: code
+    noise:
+      color: red

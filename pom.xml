@@ -32,6 +32,9 @@
         <module>13-spring-boot-validate</module>
         <module>14-spring-boot-junit</module>
         <module>15-spring-boot-quartz</module>
+        <module>16-spring-boot-shiro</module>
+        <module>17-spring-boot-mybatis-plus</module>
+        <module>18-spring-boot-kaptcha</module>
     </modules>
 
 </project>

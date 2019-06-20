@@ -16,3 +16,6 @@
 13-spring-boot-validate：整合使用Validate数据校验案例
 14-spring-boot-junit：单元测试案例
 15-spring-boot-quartz：整合使用Quartz和Scheduled案例
+16-spring-boot-shiro：整合使用shiro权限认证案例
+17-spring-boot-mybatis-plus：整合使用mybatis-plus案例
+18-spring-boot-kaptcha：整合使用kaptcha图片验证码案例

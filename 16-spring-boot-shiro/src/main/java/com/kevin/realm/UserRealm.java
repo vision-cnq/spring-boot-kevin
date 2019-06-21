@@ -90,9 +90,9 @@ public class UserRealm extends AuthorizingRealm {
     // 模拟Shiro用户加密，假设用户密码为123456
     public static void main(String[] args){
         // 用户名
-        String username = "kevin";
+        String username = "vip";
         // 用户密码
-        String password = "123456";
+        String password = "456789";
         // 加密方式
         String hashAlgorithName = "MD5";
         // 加密次数

@@ -13,10 +13,10 @@ import java.util.Set;
  */
 public class User implements Serializable {
 
-    private String id;
-    private String name;
-    private String password;
-    private Set<Role> roles = new HashSet<Role>();
+    private String id;      // 主键
+    private String name;    // 用户名
+    private String password;    // 用户密码
+    private Set<Role> roles = new HashSet<Role>();  // 对应的角色，一对多
 
     public String getId() {
         return id;

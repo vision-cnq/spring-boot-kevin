@@ -1,6 +1,6 @@
 package com.kevin.controller;
 
-import com.kevin.model.Users;
+import com.kevin.entity.Users;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;

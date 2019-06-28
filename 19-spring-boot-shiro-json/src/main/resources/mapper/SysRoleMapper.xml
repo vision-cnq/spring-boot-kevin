@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kevin.mapper.SysRoleMapper">
+
+    <resultMap id="roleMap" type="com.kevin.util.model.One2Many">
+        <id column="roleId" property="roleId"/>
+        <result column="roleName" property="roleName"/>
+        <collection property="users" ofType="java.util.HashMap">
+            <id column="userId" property="userId"/>
+            <result column="description" property="description"/>
+        </collection>
+        <collection property="menus" ofType="com.kevin.util.model.One2Many">
+            <id column="menuCode" property="menuCode"/>
+            <result column="menuName" property="menuName"/>
+            <collection property="permissions" ofType="java.util.HashMap">
+                <id column="permissionId" property="permissionId"/>
+                <result column="permissionName" property="permissionName"/>
+            </collection>
+        </collection>
+    </resultMap>
+
+    <select id="listRole" resultMap="roleMap">
+        SELECT
+            r.role_id as roleId,
+            r.role_name as roleName,
+            u.user_id as userId,
+            u.description as description,
+            p.permission_id as permissionId,
+            p.menu_code as menuCode,
+            p.menu_name as menuName,
+            p.permission_name permissionName
+        FROM sys_role r
+            LEFT JOIN sys_user_role ur ON r.role_id = ur.role_id
+            LEFT JOIN sys_user u ON ur.user_id = u.user_id AND u.account_status = '1'
+            LEFT JOIN sys_role_permission rp ON r.role_id = rp.role_id AND rp.status = '1'
+            LEFT JOIN sys_permission p ON rp.permission_id = p.permission_id
+        WHERE r.status = '1'
+        ORDER BY r.role_id, p.permission_id
+    </select>
+
+    <insert id="insertRolePermission">
+        insert into sys_role_permission (role_id, permission_id)
+        values
+        <foreach collection="permissions" item="item" index="index" separator=",">
+            (#{roleId}, #{item})
+        </foreach>
+    </insert>
+
+    <resultMap id="aRole" type="com.kevin.util.model.One2Many">
+        <id column="roleId" property="roleId"/>
+        <result column="roleName" property="roleName"/>
+        <collection property="users" ofType="java.util.HashMap">
+            <id column="userId" property="userId"/>
+        </collection>
+        <collection property="permissionIds" ofType="Integer">
+            <id column="permissionId" property="permissionId"/>
+        </collection>
+
+    </resultMap>
+    <select id="getRoleAllInfo" resultMap="aRole">
+        SELECT
+            r.role_id        roleId,
+            r.role_name roleName,
+            u.user_id        userId,
+            p.permission_id        permissionId
+        FROM sys_role r
+            LEFT JOIN sys_user_role ur ON r.role_id = ur.role_id
+            LEFT JOIN sys_user u ON ur.user_id = u.user_id AND u.account_status = '1'
+            LEFT JOIN sys_role_permission rp ON r.role_id = rp.role_id AND rp.status = '1'
+            LEFT JOIN sys_permission p ON rp.permission_id = p.permission_id
+        WHERE r.role_id = #{roleId}
+    </select>
+
+    <update id="removeOldPermission">
+        UPDATE sys_role_permission
+        SET
+        status = '2'
+        WHERE role_id = #{roleId}
+        AND permission_id in (
+        <foreach collection="permissions" item="item" index="index" separator=",">
+            #{item}
+        </foreach>
+        )
+    </update>
+
+    <update id="updateRoleName">
+        UPDATE sys_role
+        SET
+            role_name = #{roleName}
+        WHERE role_id = #{roleId}
+    </update>
+
+    <update id="removeRole">
+        UPDATE sys_role
+        SET
+            status = '2'
+        WHERE role_id = #{roleId} and rile_id !=1
+    </update>
+
+    <update id="removeRoleAllPermission">
+        UPDATE sys_role_permission
+        SET
+            status = '2'
+        WHERE role_id = #{roleId}
+    </update>
+
+</mapper>

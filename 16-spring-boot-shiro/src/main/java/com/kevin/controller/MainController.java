@@ -20,20 +20,44 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class MainController {
 
+    /**
+     * 主页
+     * @param request
+     * @param response
+     * @return
+     */
     @RequestMapping("/main")
     public String index(HttpServletRequest request, HttpServletResponse response){
+        System.out.println("==========MainController.index()==========");
+
         response.setHeader("root", request.getContextPath());
         return "index";
     }
 
+    /**
+     * 登录界面
+     * @param request
+     * @param response
+     * @return
+     */
     @RequestMapping("/toLogin")
     public String toLogin(HttpServletRequest request, HttpServletResponse response){
+        System.out.println("==========MainController.toLogin()==========");
+
         response.setHeader("root", request.getContextPath());
         return "login";
     }
 
+    /**
+     *      登录判断界面
+     * @param request
+     * @param response
+     * @return
+     */
     @RequestMapping("/login")
     public String login(HttpServletRequest request, HttpServletResponse response){
+        System.out.println("==========MainController.login()==========");
+
         response.setHeader("root", request.getContextPath());
         String userName = request.getParameter("username");
         String password = request.getParameter("password");
@@ -45,7 +69,7 @@ public class MainController {
         // 3.执行登录方法
         try{
             subject.login(token);
-            return "redirect:/main";
+            return "redirect:/main";    // 认证成功，来到主页
         } catch (UnknownAccountException e){
             e.printStackTrace();
             request.setAttribute("msg","用户名不存在！");
@@ -53,11 +77,17 @@ public class MainController {
             request.setAttribute("msg","密码错误！");
         }
 
-        return "login";
+        return "login";     // 失败，返回登录界面
     }
 
+    /**
+     * 退出登录，返回主页
+     * @return
+     */
     @RequestMapping("/logout")
     public String logout(){
+        System.out.println("==========MainController.logout()==========");
+
         Subject subject = SecurityUtils.getSubject();
         if (subject != null) {
             subject.logout();
@@ -65,8 +95,14 @@ public class MainController {
         return "redirect:/main";
     }
 
+    /**
+     * 没有权限
+     * @return
+     */
     @RequestMapping("/error/unAuth")
     public String unAuth(){
+        System.out.println("==========MainController.unAuth()==========");
+
         return "/error/unAuth";
     }
 }

@@ -10,9 +10,9 @@ import java.io.Serializable;
  */
 public class Permission implements Serializable {
 
-    private String id;
-    private String name;
-    private String url;
+    private String id;      // 主键
+    private String name;    // 权限名称
+    private String url;     // 权限url
 
     public String getId() {
         return id;

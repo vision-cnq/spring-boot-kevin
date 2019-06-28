@@ -1,9 +1,8 @@
 package com.kevin.controller;
 
-import com.kevin.model.Users;
+import com.kevin.entity.Users;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;

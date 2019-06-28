@@ -35,6 +35,7 @@
         <module>16-spring-boot-shiro</module>
         <module>17-spring-boot-mybatis-plus</module>
         <module>18-spring-boot-kaptcha</module>
+        <module>19-spring-boot-shiro-json</module>
     </modules>
 
 </project>

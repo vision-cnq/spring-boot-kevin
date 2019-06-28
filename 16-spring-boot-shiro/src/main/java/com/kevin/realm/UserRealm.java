@@ -34,10 +34,9 @@ public class UserRealm extends AuthorizingRealm {
      * 用户授权
      **/
     @Override
-    protected AuthorizationInfo doGetAuthorizationInfo(
-            PrincipalCollection principalCollection) {
+    protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
 
-        System.out.println("===执行授权===");
+        System.out.println("==========执行授权==========");
         // 获取当前用户
         Subject subject = SecurityUtils.getSubject();
         User user = (User)subject.getPrincipal();
@@ -59,7 +58,9 @@ public class UserRealm extends AuthorizingRealm {
                 // 添加权限
                 info.addStringPermissions(premissionCollection);
             }
+            // 添加角色
             info.addRoles(rolesCollection);
+            System.out.println("用户: "+user.getName()+" ,角色: "+info.getRoles()+" ,权限: "+info.getStringPermissions());
             return info;
         }
         return null;
@@ -72,7 +73,7 @@ public class UserRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(
             AuthenticationToken authenticationToken) throws AuthenticationException {
 
-        System.out.println("===执行认证===");
+        System.out.println("==========执行认证==========");
 
         UsernamePasswordToken token = (UsernamePasswordToken)authenticationToken;
         // 从数据库获取对应用户名的用户

@@ -12,9 +12,9 @@ import java.util.Set;
  */
 public class Role implements Serializable {
 
-    private String id;
-    private String name;
-    private Set<Permission> permissions = new HashSet<Permission>();
+    private String id;      // 主键
+    private String name;    // 角色名
+    private Set<Permission> permissions = new HashSet<Permission>();    // 对应的权限，一对多
 
     public String getId() {
         return id;

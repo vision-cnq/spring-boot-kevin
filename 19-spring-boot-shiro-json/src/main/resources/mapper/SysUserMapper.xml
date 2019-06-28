@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kevin.mapper.SysUserMapper">
+
+    <resultMap id="userMap" type="com.kevin.util.model.One2Many">
+        <id column="userId" property="userId"/>
+        <result column="name" property="name"/>
+        <result column="description" property="description"/>
+        <result column="roleId" property="roleId"/>
+        <result column="roleName" property="roleName"/>
+        <result column="createTime" property="createTime"/>
+        <result column="updateTime" property="updateTime"/>
+        <result column="lastLoginTime" property="lastLoginTime"/>
+        <result column="accountStatus" property="accountStatus"/>
+        <collection property="permissionList" ofType="String">
+            <id column="permissionName" property="permissionName"/>
+        </collection>
+    </resultMap>
+
+    <select id="listUser" resultMap="userMap">
+        SELECT
+            u.*,
+            r.role_name as roleName,
+            CONCAT(p.menu_name, p.permission_name) as permissionName
+        FROM (
+                SELECT
+                     user_id as userId,
+                     name as name,
+                     description as description,
+                     account_status as accountStatus,
+                     DATE_FORMAT(create_time, '%Y.%m.%d %T') createTime,
+                     DATE_FORMAT(update_time, '%Y.%m.%d %T') updateTime
+                FROM sys_user
+                WHERE account_status = '1'
+                ORDER BY user_id
+                LIMIT #{offSet}, #{pageRow}
+             ) u
+            LEFT JOIN sys_user_role ur ON u.userId = ur.user_id
+            LEFT JOIN sys_role r ON r.role_id = ur.role_id
+            LEFT JOIN sys_role_permission rp ON rp.role_id = r.role_id
+            LEFT JOIN sys_permission p ON p.permission_id = rp.permission_id
+        ORDER BY u.userId
+    </select>
+
+    <select id="getRoleAllInfo" resultMap="aRole">
+        SELECT
+            r.role_id as roleId,
+            r.role_name as roleName,
+            u.user_id as userId,
+            p.permission_id as permissionId
+        FROM sys_role r
+            LEFT JOIN sys_user_role ur ON r.role_id = ur.role_id
+            LEFT JOIN sys_user u ON ur.user_id = u.user_id AND u.account_status = '1'
+            LEFT JOIN sys_role_permission rp ON r.role_id = rp.role_id AND rp.status = '1'
+            LEFT JOIN sys_permission p ON rp.permission_id = p.permission_id
+        WHERE r.role_id = #{roleId}
+    </select>
+</mapper>

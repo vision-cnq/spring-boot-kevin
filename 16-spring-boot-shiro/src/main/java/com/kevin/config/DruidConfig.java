@@ -23,8 +23,9 @@ import java.util.Map;
 public class DruidConfig {
 
     @ConfigurationProperties(prefix = "spring.datasource")
-    @Bean(destroyMethod="close", initMethod = "init")
+    @Bean(initMethod = "init", destroyMethod = "close")
     public DataSource druid(){
+        System.out.println("==========DruidConfig.druid()==========");
         return new DruidDataSource();
     }
 
@@ -33,8 +34,9 @@ public class DruidConfig {
      **/
     @Bean
     public ServletRegistrationBean statViewServlet(){
-        ServletRegistrationBean bean = new ServletRegistrationBean(
-                new StatViewServlet(), "/druid/*");
+        System.out.println("==========DruidConfig.statViewServlet()==========");
+
+        ServletRegistrationBean bean = new ServletRegistrationBean(new StatViewServlet(), "/druid/*");
         Map<String,String> initParams = new HashMap<>();
         // druid后台管理员用户
         initParams.put("loginUsername","admin");
@@ -51,8 +53,9 @@ public class DruidConfig {
      **/
     @Bean
     public FilterRegistrationBean webStatFilter(){
-        FilterRegistrationBean bean = new FilterRegistrationBean(
-                new WebStatFilter());
+        System.out.println("==========DruidConfig.webStatFilter()==========");
+
+        FilterRegistrationBean bean = new FilterRegistrationBean(new WebStatFilter());
         // 添加过滤规则
         bean.addUrlPatterns("/*");
         Map<String,String> initParams = new HashMap<>();

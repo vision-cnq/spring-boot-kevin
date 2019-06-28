@@ -1,4 +1,4 @@
-package com.kevin.model;
+package com.kevin.entity;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;

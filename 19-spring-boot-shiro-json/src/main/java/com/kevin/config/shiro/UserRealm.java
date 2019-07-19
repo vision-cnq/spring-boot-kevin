@@ -46,8 +46,8 @@ public class UserRealm extends AuthorizingRealm {
         Session session = SecurityUtils.getSubject().getSession();
         //查询用户的权限
         HashMap<String,Object> permission = (HashMap<String,Object>) session.getAttribute(Constants.SESSION_USER_PERMISSION);
-        logger.info("permission的值为:" + permission);
-        logger.info("本用户权限为:" + permission.get("permissionList"));
+        logger.info("permission的值为: [{}]", permission);
+        logger.info("本用户权限为: [{}]", permission.get("permissionList"));
         //为当前用户设置角色和权限
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         authorizationInfo.addStringPermissions((Collection<String>) permission.get("permissionList"));
@@ -94,7 +94,7 @@ public class UserRealm extends AuthorizingRealm {
         // 加密方式
         String hashAlgorithName = "MD5";
         // 加密次数
-        int hashIterations = 1024;
+        int hashIterations = 2;
         ByteSource credentialsSalt = ByteSource.Util.bytes(username);
         Object obj = new SimpleHash(hashAlgorithName, password,
                 credentialsSalt, hashIterations);

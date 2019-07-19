@@ -18,5 +18,5 @@ public interface SysUserMapper extends BaseMapper<SysUser> {
     /**
      * 查询用户列表
      */
-    List<HashMap<String,Object>> listUser(@Param("offset") int offset, @Param("pageRow") int pageRow);
+    List<HashMap<String,Object>> listUser(@Param("offset")int offset, @Param("pageRow")int pageRow);
 }

@@ -34,7 +34,7 @@
                 FROM sys_user
                 WHERE account_status = '1'
                 ORDER BY user_id
-                LIMIT #{offSet}, #{pageRow}
+                LIMIT #{offset}, #{pageRow}
              ) u
             LEFT JOIN sys_user_role ur ON u.userId = ur.user_id
             LEFT JOIN sys_role r ON r.role_id = ur.role_id
@@ -43,17 +43,4 @@
         ORDER BY u.userId
     </select>
 
-    <select id="getRoleAllInfo" resultMap="aRole">
-        SELECT
-            r.role_id as roleId,
-            r.role_name as roleName,
-            u.user_id as userId,
-            p.permission_id as permissionId
-        FROM sys_role r
-            LEFT JOIN sys_user_role ur ON r.role_id = ur.role_id
-            LEFT JOIN sys_user u ON ur.user_id = u.user_id AND u.account_status = '1'
-            LEFT JOIN sys_role_permission rp ON r.role_id = rp.role_id AND rp.status = '1'
-            LEFT JOIN sys_permission p ON rp.permission_id = p.permission_id
-        WHERE r.role_id = #{roleId}
-    </select>
 </mapper>

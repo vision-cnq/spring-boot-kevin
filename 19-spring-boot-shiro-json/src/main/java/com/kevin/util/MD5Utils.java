@@ -14,7 +14,7 @@ public class MD5Utils {
 
 	private static final String ALGORITH_NAME = "md5";
 
-	private static final int HASH_ITERATIONS = 1024;
+	private static final int HASH_ITERATIONS = 2;
 
 	public static String encrypt(String pswd) {
 		String newPassword = new SimpleHash(ALGORITH_NAME, pswd, ByteSource.Util.bytes(SALT), HASH_ITERATIONS).toHex();

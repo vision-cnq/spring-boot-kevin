@@ -104,7 +104,7 @@ public class ShiroConfig {
          **/
         Map<String, String> filterMap = new LinkedHashMap<>();
         filterMap.put("/login","anon");
-        //filterMap.put("/vip/**","roles[vip]");  // 表示该链接需要有vip这个角色才可以访问
+        filterMap.put("/vip/**","roles[vip]");  // 表示该链接需要有vip这个角色才可以访问
         filterMap.put("/druid/**", "anon");
         filterMap.put("/static/**","anon");
 

@@ -63,14 +63,14 @@ public class CommonUtil {
      * @param list        查询分页对象list
      * @param totalCount  查询出记录的总条数
      */
-    public static <T> Result successPage(List<T> list, int totalCount) {
+    public static <T> Result<T> successPage(List<T> list, int totalCount) {
         int totalPage = getPageCounts(10, totalCount);
-        Result result = successJson();
-        JSONObject info = new JSONObject();
+        HashMap<String,Object> info = new HashMap<String,Object>();
         info.put("list", list);
         info.put("totalCount", totalCount);
         info.put("totalPage", totalPage);
-        result.addInfo("info", info);
+        Result result = Result.ok();
+        result.addInfo("result", info);
         return result;
     }
 

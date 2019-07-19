@@ -29,7 +29,7 @@ public interface SysPermissionMapper extends BaseMapper<SysPermission> {
     int insertRolePermission(@Param("roleId") String roleId, @Param("permissions") List<Integer> permissions);
 
     /**
-     * 将角色曾经拥有而修改为不再拥有的权限 delete_status改为'2'
+     * 将角色曾经拥有而修改为不再拥有的权限 status改为'2'
      */
     int removeOldPermission(@Param("roleId") String roleId, @Param("permissions") List<Integer> permissions);
 
@@ -37,4 +37,5 @@ public interface SysPermissionMapper extends BaseMapper<SysPermission> {
      * 查询所有权限, 给角色分配权限时调用
      */
     List<HashMap<String,Object>> listAllPermission();
+
 }

@@ -54,7 +54,7 @@
         )
     </update>
 
-    <resultMap id="permissionMap" type="com.kevin.util.model.One2Many">
+    <resultMap id="permissionMap1" type="com.kevin.util.model.One2Many">
         <id column="menuName" property="menuName"/>
         <collection property="permissions" ofType="java.util.HashMap">
             <id column="id" property="id"/>
@@ -62,7 +62,8 @@
             <result column="requiredPerm" property="requiredPerm" javaType="Integer"/>
         </collection>
     </resultMap>
-    <select id="listAllPermission" resultMap="permissionMap">
+
+    <select id="listAllPermission" resultMap="permissionMap1">
         SELECT
             p.permission_id as permissionId,
             p.menu_name as menuName,

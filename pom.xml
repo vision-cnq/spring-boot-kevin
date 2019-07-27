@@ -36,6 +36,7 @@
         <module>17-spring-boot-mybatis-plus</module>
         <module>18-spring-boot-kaptcha</module>
         <module>19-spring-boot-shiro-json</module>
+        <module>20-spring-boot-vue-element</module>
     </modules>
 
 </project>

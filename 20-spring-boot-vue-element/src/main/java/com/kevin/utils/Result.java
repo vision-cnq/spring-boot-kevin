@@ -1,5 +1,7 @@
 package com.kevin.utils;
 
+import com.kevin.utils.enums.ResponseCodeEnum;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,10 +13,11 @@ import java.util.Map;
  */
 public class Result<T> {
 
-    private final static Integer CODE_SUCCESS = 200;
-    private final static Integer CODE_FAIL = 500;
-    private final static String MSG_SUCCESS = "操作成功";
-    private final static String MSG_FAIL = "服务器错误";
+    private final static Integer CODE_SUCCESS = ResponseCodeEnum.OK.getCode();
+    private final static String MSG_SUCCESS = ResponseCodeEnum.OK.getMsg();
+
+    private final static Integer CODE_FAIL = ResponseCodeEnum.SERVER_ERROR.getCode();
+    private final static String MSG_FAIL = ResponseCodeEnum.SERVER_ERROR.getMsg();
 
     // 响应码
     private Integer code;

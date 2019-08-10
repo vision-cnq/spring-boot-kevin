@@ -10,9 +10,17 @@ import com.kevin.entity.User;
  */
 public interface UserMapper {
 
-    // 查询用户信息
+    /**
+     * 查询用户信息
+     * @param name
+     * @return
+     */
     User findByName(String name);
 
-    // 查询用户信息，角色，权限
+    /**
+     * 查询用户信息，角色，权限
+     * @param id
+     * @return
+     */
     User findById(String id);
 }

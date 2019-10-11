@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Title</title>
+    </head>
+    <body>
+        <p th:text="'尊敬的 ' + ${user} + '用户:'"></p>
+
+        <p th:text=" '恭喜您注册成为'+${web}+'的用户,同时感谢您对'+${company}+'的关注与支持,并欢迎您使用'+${product}+'的产品与服务。'"></p>
+    </body>
+</html>

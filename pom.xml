@@ -37,6 +37,8 @@
         <module>18-spring-boot-kaptcha</module>
         <module>19-spring-boot-shiro-json</module>
         <module>20-spring-boot-vue-element</module>
+        <module>21-spring-boot-jwt</module>
+        <module>22-spring-boot-mail</module>
     </modules>
 
 </project>

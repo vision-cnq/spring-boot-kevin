@@ -1,3 +1,4 @@
+#QQ邮件
 spring:
   mail:
     host: smtp.qq.com
@@ -5,6 +6,24 @@ spring:
     password: wfqhbysqvyiabbej
     # port: 25
     default-encoding: UTF-8
+
 mail:
   fromMail:
     addr: 1021979964@qq.com
+
+
+#钉钉邮件
+#spring:
+#  mail:
+#    host: smtp.mxhichina.com
+#    username: caonanqing@yishouapp.com
+#    password: nanqing961212+
+#    port: 25
+#    default-encoding: UTF-8
+#    smtp:
+#      timeout: 1000000
+#      connectiontimeout: 1000000
+#      writetimeout: 1000000
+#mail:
+#  fromMail:
+#    addr: caonanqing@yishouapp.com

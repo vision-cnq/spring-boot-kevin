@@ -23,13 +23,15 @@ public class MailController {
     @Autowired
     private TemplateEngine templateEngine;
 
+    String[] to = new String[]{"caonanqing@yishouapp.com"};
+
     /**
      * 发送简单邮件
      * @return
      */
     @RequestMapping("/sendSimpleMail")
     public String sendSimpleMail(){
-        String to = "caonanqing@yishouapp.com";
+        // String to = "liangzhaoguang@yishouapp.com";
         String subject = "test";
         String content = "hello world";
         mailService.sendSimpleMail(subject,content,to);
@@ -42,7 +44,7 @@ public class MailController {
      */
     @RequestMapping("/sendHtmlMail")
     public String sendHtmlMail(){
-        String to = "1021979964@qq.com";
+        //String to = "1021979964@qq.com";
         String subject = "test";
         String content = "hello world";
         mailService.sendHtmlMail(subject,content,to);
@@ -55,10 +57,10 @@ public class MailController {
      */
     @RequestMapping("/sendAttachmentsMail")
     public String sendAttachmentsMail(){
-        String to = "1021979964@qq.com";
+        //String to = "1021979964@qq.com";
         String subject = "主题：带附件的邮件";
         String content = "有附件，请查收！";
-        String filePath="C:\\Users\\caonanqing\\Desktop\\Test.txt";
+        String filePath="E:\\download\\开发工具和环境文件\\eclipse-committers-oxygen-3a-win32-x86_64.zip";
         mailService.sendAttachmentsMail(subject, content, filePath, to);
         return "success";
     }
@@ -75,7 +77,7 @@ public class MailController {
         context.setVariable("company", "测试公司");
         context.setVariable("product","测试产品");
         String emailContent = templateEngine.process("index", context);
-        String to = "1021979964@qq.com";
+        //String to = "1021979964@qq.com";
         String subject = "主题：模板邮件";
         mailService.sendHtmlMail(subject,emailContent,to);
         return "success";

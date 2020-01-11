@@ -3,7 +3,7 @@ spring:
   mail:
     host: smtp.qq.com
     username: 1021979964@qq.com
-    password: wfqhbysqvyiabbej
+    password: xxx
     # port: 25
     default-encoding: UTF-8
 
@@ -17,7 +17,7 @@ mail:
 #  mail:
 #    host: smtp.mxhichina.com
 #    username: caonanqing@yishouapp.com
-#    password: nanqing961212+
+#    password: xxx
 #    port: 25
 #    default-encoding: UTF-8
 #    smtp:

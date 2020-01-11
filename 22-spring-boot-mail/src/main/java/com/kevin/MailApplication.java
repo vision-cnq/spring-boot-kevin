@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 /**
  * @author caonanqing
  * @version 1.0
- * @description
+ * @description     整合使用邮件，
  * @createDate 2019/10/10
  */
 @SpringBootApplication

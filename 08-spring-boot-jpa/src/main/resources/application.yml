@@ -1,3 +1,4 @@
+# mysql
 spring:
   #配置数据源
   datasource:
@@ -13,3 +14,17 @@ spring:
       ddl-auto: update
     #打印执行sql语句
     show-sql: true
+
+# oracle
+#spring:
+#  jpa:
+#    database: oracle
+#    show-sql: true
+#    hibernate:
+#      naming:
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#  datasource:
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+#    url: jdbc:oracle:thin:@127.0.0.1:1521:ORCL
+#    username: ****
+#    password: ****

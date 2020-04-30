@@ -26,7 +26,7 @@
 | 20-spring-boot-vue-element    | 使用vue+element集成的后台代码                                |
 | 21-spring-boot-jwt            | 集成使用JWT案例                                              |
 | 22-spring-boot-mail           | 集成使用邮件含有QQ邮件、钉钉邮件配置案例                     |
-
+| 23-spring-boot-sharding-jdbc  | SpringBoot集成Sharding-Jdbc（分库分表）案例                    |
 
 
 

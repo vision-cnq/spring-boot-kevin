@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.PostConstruct;
 import java.util.List;
 
 
@@ -59,7 +58,6 @@ public class UserController {
      */
     @RequestMapping("/saveAll")
     public String saveUser() {
-
         List<User> userList = Lists.newArrayList();
         for (int i = 1; i < 10; i++) {
             for (int j = 1; j < 20; j++) {

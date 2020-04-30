@@ -6,14 +6,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @author caonanqing
  * @version 1.0
- * @description
+ * @description     分库测试案例
  * @createDate 2020/1/13
  */
 //@SpringBootApplication
-//public class ShardingJdbcApplication {
+//public class ShardingApplication {
 //
 //    public static void main(String[] args) {
 //
-//        SpringApplication.run(ShardingJdbcApplication.class,args);
+//        SpringApplication.run(ShardingApplication.class,args);
 //    }
 //}

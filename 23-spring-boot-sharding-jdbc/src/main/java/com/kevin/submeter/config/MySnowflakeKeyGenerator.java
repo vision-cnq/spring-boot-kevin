@@ -5,8 +5,6 @@ import cn.hutool.core.util.IdUtil;
 import org.apache.shardingsphere.spi.keygen.ShardingKeyGenerator;
 
 import java.util.Properties;
-import java.util.UUID;
-
 
 /**
  * @author caonanqing

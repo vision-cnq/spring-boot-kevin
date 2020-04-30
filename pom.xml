@@ -40,6 +40,7 @@
         <module>21-spring-boot-jwt</module>
         <module>22-spring-boot-mail</module>
         <module>23-spring-boot-sharding-jdbc</module>
+        <module>24-springboot-elasticsearch</module>
     </modules>
 
 </project>
